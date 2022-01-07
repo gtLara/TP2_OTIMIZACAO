@@ -2,7 +2,7 @@
 % Busca o valor do alfa otimo para a passada 
 % utilizando o metodo da Seção Aurea.
   function [alfaotim,icfunc] = otgoldsc_a22(funcao,icfunc,isa_FV,Hess,...
-            XK,dxk,k,fold,fnew,dfold,dfnew,Xmin,Xmax,MAXITER)
+            XK,dxk,k,fold,fnew,dfold,dfnew,Xmin,Xmax,MAXITER,a)
 % ---------------------------
 % Parâmetros de saída         
 % alfaotim: Alfa ótimo
@@ -55,7 +55,7 @@
     % dfobj : gradiente da função objetivo.
     % função: função a ser avaliada
     % xk    : Ponto onde se deseja avaliar a função
-      [faprx2,dfobjnew] = feval(funcao,xksup);
+      [faprx2,dfobjnew] = feval(funcao,xksup,a);
       icfunc = icfunc + 1;
     % ==========================================
     % ==========================================
@@ -74,7 +74,7 @@
       % dfobj : gradiente da função objetivo.
       % função: função a ser avaliada
       % xk    : Ponto onde se deseja avaliar a função
-      [faprx1,dfobjnew] = feval(funcao,xkinf);
+      [faprx1,dfobjnew] = feval(funcao,xkinf,a);
       icfunc = icfunc + 1;
       % ==========================================
       % ==========================================
@@ -101,7 +101,7 @@
               % dfobj : gradiente da função objetivo.
               % função: função a ser avaliada
               % xk    : Ponto onde se deseja avaliar a função
-              [faprx2,dfobjnew] = feval(funcao,xksup);
+              [faprx2,dfobjnew] = feval(funcao,xksup,a);
                icfunc = icfunc + 1;
               % ==========================================
               % ==========================================
@@ -130,7 +130,7 @@
                 % dfobj : gradiente da função objetivo.
                 % função: função a ser avaliada
                 % xk    : Ponto onde se deseja avaliar a função
-                [faprx1,dfobjnew] = feval(funcao,xkinf);
+                [faprx1,dfobjnew] = feval(funcao,xkinf,a);
                  icfunc = icfunc + 1;
                 % ==========================================
                 % ==========================================
