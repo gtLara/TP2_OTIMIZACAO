@@ -4,7 +4,7 @@ format = "%s %s %s %s %s\n";
 % fexlivro
 
 xvec = [[9;9], [-3;2]];
-avec = [0.0263, -0.0263, 1]
+avec = [-0.0263, 0.0263, 1]
 
 for a=avec
 
