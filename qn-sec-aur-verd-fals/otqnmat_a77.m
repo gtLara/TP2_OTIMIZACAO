@@ -87,7 +87,7 @@
               corr=2;
            end
            [Imatqn,IER]=otihmmv2_a2(tetha,pho,fobjold,fobjnew,dfobjold,...
-                                    dfobjnew,xkold,xknew,Imatqn,-1,corr);
+                                    dfobjnew,xkold,xknew,Imatqn,-1,corr,a);
         else
          % Aproximaçao para a inversa da Hessiana(Identidade).
            Imatqn = eye(nxk);
@@ -113,7 +113,7 @@
            [Hess,IER]=otihmmv2_a2(tetha,pho,fobjold,fobjnew,dfobjold,...
                                   dfobjnew,xkold,xknew,Hess,1,corr);
            [alfaotim,icfunc] = otgoldsc_a22(funcao,icfunc,isa_FV,Hess,XK,...
-            dxk,k,fobjold,fobjnew,dfobjold,dfobjnew,Xmin,Xmax,MAXITER);
+            dxk,k,fobjold,fobjnew,dfobjold,dfobjnew,Xmin,Xmax,MAXITER,a);
         else
            if abs(dfobjnew'*dfobjnew) > 1.0e-3*epslon
               alfaotim = abs(0.05*fobjnew/abs(dfobjnew'*dfobjnew));
