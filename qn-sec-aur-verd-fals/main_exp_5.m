@@ -12,3 +12,5 @@ for modusoperandi=1:-1:0
     end
     fprintf(file, "\n");
 end
+
+fclose(file)
